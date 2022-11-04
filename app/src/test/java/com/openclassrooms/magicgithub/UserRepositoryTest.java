@@ -23,7 +23,8 @@ import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInA
  */
 @RunWith(JUnit4.class)
 public class UserRepositoryTest {
-    
+
+    /** Objectif: faire fonctionner ce code*/
     private UserRepository userRepository;
     
     @Before
