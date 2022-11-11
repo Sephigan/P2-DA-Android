@@ -27,7 +27,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        // TODO: A tester
+        // TODO: A refaire en prenant en compte les tests
         String a = new String();
         String b = new String();
         String c = new String();
@@ -46,7 +46,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        // TODO: A tester
+        // TODO: A refaire en prenant en compte les tests
         FAKE_USERS.remove(user.getId());
     }
 }
