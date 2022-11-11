@@ -1,5 +1,7 @@
 package com.openclassrooms.magicgithub.repository;
 
+import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS;
+
 import com.openclassrooms.magicgithub.api.ApiService;
 import com.openclassrooms.magicgithub.model.User;
 
@@ -14,8 +16,8 @@ public class UserRepository {
     }
 
     public List<User> getUsers() {
-        // TODO: A modifier
-        return null;
+        // TODO: A tester
+        return FAKE_USERS;
     }
 
     public void generateRandomUser() {
