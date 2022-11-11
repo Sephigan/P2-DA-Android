@@ -28,12 +28,17 @@ public class FakeApiService implements ApiService {
     @Override
     public void generateRandomUser() {
         // TODO: A tester
-        for(x=FAKE_USERS.size(); x<25; x++)
+        String a = new String();
+        String b = new String();
+        String c = new String();
+        User add_User = new User(a, b, c);
+        for(int x=FAKE_USERS.size(); x<25; x++)
         {
-            FAKE_USERS.add(x,new User(x,y,z) = FAKE_USERS_RANDOM.get(0));
+            for(int y=0; y<=4; y++) {
+                FAKE_USERS.add(x, add_User = FAKE_USERS_RANDOM.get(y));
+            }
         }
         ;
-
     }
 
     /**
