@@ -2,6 +2,8 @@ package com.openclassrooms.magicgithub.api;
 
 import com.openclassrooms.magicgithub.model.User;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -33,10 +35,10 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        //Ça devrait marcher mais non et ça m'énerve !
-        getUsers().clear();
+        List<User> New_List = new ArrayList<User>(getUsers());
+        New_List.clear();
         User UserRandom = FAKE_USERS_RANDOM.get(0);
-        getUsers().add(UserRandom);
+        New_List.add(UserRandom);
     }
 
     /**
@@ -44,9 +46,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        // Je comprends rien !
         getUsers().remove(user.getId());
-        boolean test_presence = getUsers().contains(user);
-        assert test_presence = false;
+        assert getUsers().contains(user);
     }
 }
