@@ -1,11 +1,18 @@
 package com.openclassrooms.magicgithub.api;
 
 import com.openclassrooms.magicgithub.model.User;
+
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS;
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS_RANDOM;
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateUsers;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public class FakeApiService implements ApiService {
 
@@ -17,7 +24,6 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public List<User> getUsers() {
-        /** A Vérifier */
         return FAKE_USERS;
     }
 
@@ -27,18 +33,10 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        // TODO: A refaire en prenant en compte les tests
-        String a = new String();
-        String b = new String();
-        String c = new String();
-        User add_User = new User(a, b, c);
-        for(int x=FAKE_USERS.size(); x<25; x++)
-        {
-            for(int y=0; y<=4; y++) {
-                FAKE_USERS.add(x, add_User = FAKE_USERS_RANDOM.get(y));
-            }
-        }
-        ;
+        //Ça devrait marcher mais non et ça m'énerve !
+        getUsers().clear();
+        User UserRandom = FAKE_USERS_RANDOM.get(0);
+        getUsers().add(UserRandom);
     }
 
     /**
@@ -46,7 +44,9 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        // TODO: A refaire en prenant en compte les tests
-        FAKE_USERS.remove(user.getId());
+        // Je comprends rien !
+        getUsers().remove(user.getId());
+        boolean test_presence = getUsers().contains(user);
+        assert test_presence = false;
     }
 }
