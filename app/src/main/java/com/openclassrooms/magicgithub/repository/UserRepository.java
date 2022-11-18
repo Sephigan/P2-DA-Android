@@ -22,10 +22,7 @@ public class UserRepository {
     }
 
     public void generateRandomUser() {
-        List<User> New_List = new ArrayList<User>(getUsers());
-        New_List.clear();
-        User UserRandom = FAKE_USERS_RANDOM.get(0);
-        New_List.add(UserRandom);
+        apiService.generateRandomUser();
     }
 
     public void deleteUser(User user) {

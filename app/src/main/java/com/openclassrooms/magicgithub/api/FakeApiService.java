@@ -35,10 +35,9 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        List<User> New_List = new ArrayList<User>(getUsers());
-        New_List.clear();
+        users.clear();
         User UserRandom = FAKE_USERS_RANDOM.get(0);
-        New_List.add(UserRandom);
+        users.add(UserRandom);
     }
 
     /**
@@ -46,7 +45,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        users.remove(user.getId());
+        users.remove(user);
         //assert getUsers().contains(user);
     }
 }
