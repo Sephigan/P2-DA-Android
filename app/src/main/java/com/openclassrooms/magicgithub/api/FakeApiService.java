@@ -26,7 +26,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public List<User> getUsers() {
-        return FAKE_USERS;
+        return users;
     }
 
     /**
@@ -46,7 +46,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        getUsers().remove(user.getId());
-        assert getUsers().contains(user);
+        users.remove(user.getId());
+        //assert getUsers().contains(user);
     }
 }

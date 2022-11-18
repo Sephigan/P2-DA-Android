@@ -18,7 +18,7 @@ public class UserRepository {
     }
 
     public List<User> getUsers() {
-        return FAKE_USERS;
+        return apiService.getUsers();
     }
 
     public void generateRandomUser() {
@@ -30,7 +30,7 @@ public class UserRepository {
 
     public void deleteUser(User user) {
         // TODO: A tester
-        getUsers().remove(user.getId());
-        assert getUsers().contains(user);
+        apiService.deleteUser(user);
+        //assert getUsers().contains(user);
     }
 }
