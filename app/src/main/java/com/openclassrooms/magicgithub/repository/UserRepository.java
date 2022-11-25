@@ -26,8 +26,6 @@ public class UserRepository {
     }
 
     public void deleteUser(User user) {
-        // TODO: A tester
         apiService.deleteUser(user);
-        //assert getUsers().contains(user);
     }
 }

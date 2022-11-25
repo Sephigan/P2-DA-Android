@@ -46,6 +46,5 @@ public class FakeApiService implements ApiService {
     @Override
     public void deleteUser(User user) {
         users.remove(user);
-        //assert getUsers().contains(user);
     }
 }
